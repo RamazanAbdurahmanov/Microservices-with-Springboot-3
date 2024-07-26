@@ -6,15 +6,14 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
 
 server:
-  port: 8090
-
+  port: 8070
 spring:
   application:
-    name: students
+    name: schools
   config:
     import: optional:configserver:http://localhost:8888
   datasource:
-    url: jdbc:h2:mem:students
+    url: jdbc:h2:mem:schools
     driver-class-name: org.h2.Driver
     username: sa
     password: as
@@ -23,7 +22,10 @@ spring:
       ddl-auto: create
     database: h2
     database-platform: org.hibernate.dialect.H2Dialect
-  h2:
-    console:
-      enabled: true
-      path: /h2-console
+h2:
+  console:
+    enabled: true
+    path: /h2-console
+
+
+
