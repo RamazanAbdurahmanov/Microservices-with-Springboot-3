@@ -9,4 +9,5 @@ public interface StudentService {
 
     List<Student> findAllStudents();
 
+    List<Student> findAllStudentsBySchool(Long schoolId);
 }

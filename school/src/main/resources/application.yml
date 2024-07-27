@@ -7,6 +7,7 @@ eureka:
 
 server:
   port: 8070
+
 spring:
   application:
     name: schools
@@ -15,17 +16,18 @@ spring:
   datasource:
     url: jdbc:h2:mem:schools
     driver-class-name: org.h2.Driver
-    username: sa
-    password: as
+    username: he
+    password: he
   jpa:
     hibernate:
       ddl-auto: create
     database: h2
     database-platform: org.hibernate.dialect.H2Dialect
-h2:
-  console:
-    enabled: true
-    path: /h2-console
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
 
-
-
+application:
+  config:
+    students-url: http://localhost:8090/students

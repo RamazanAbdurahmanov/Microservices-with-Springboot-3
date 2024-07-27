@@ -1,6 +1,7 @@
 package az.ramazan.school.controller;
 
 import az.ramazan.school.entity.School;
+import az.ramazan.school.dto.FullSchoolResponse;
 import az.ramazan.school.service.SchoolService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -24,5 +25,9 @@ public class SchoolController {
     @GetMapping
     public ResponseEntity<List<School>> findAllSchools() {
         return ResponseEntity.ok(schoolService.findAllSchools());
+    }
+    @GetMapping("/with-students/{school-id}")
+    public ResponseEntity<FullSchoolResponse> findAllSchools(@PathVariable("school-id") Long schoolId) {
+        return ResponseEntity.ok(schoolService.findSchoolsWithStudents(schoolId));
     }
 }
